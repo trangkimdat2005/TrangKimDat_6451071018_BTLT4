@@ -4,6 +4,9 @@ import 'cau2/views/personal_info_view.dart';
 import 'cau3/views/survey_view.dart';
 import 'cau4/views/booking_view.dart';
 import 'cau5/views/upload_view.dart';
+import 'cau10/views/basic_register_view.dart';
+import 'cau11/views/login_view.dart';
+import 'cau13/views/feedback_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -123,18 +126,45 @@ class HomePage extends StatelessWidget {
                   targetPage: const UploadView(), // Trỏ tới form mới tạo
                   isActive: true, // Mở khoá chức năng
                 ),
-
-                const Padding(
-                  padding: EdgeInsets.only(top: 24.0, bottom: 16.0, left: 8.0),
-                  child: Text(
-                    'Các bài sắp tới',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey,
-                    ),
-                  ),
+                _buildMenuCard(
+                  context,
+                  title: 'Bài 10: Form Đăng Ký Cơ Bản',
+                  subtitle: 'Validate realtime, Error Text dưới field',
+                  icon: Icons.app_registration_rounded,
+                  iconColor: const Color(0xFFE11D48), // Màu Rose
+                  targetPage: const BasicRegisterView(),
+                  isActive: true,
                 ),
+                _buildMenuCard(
+                  context,
+                  title: 'Bài 11: Form Login Có Styling',
+                  subtitle: 'InputDecorationTheme, Validate on submit',
+                  icon: Icons.login_rounded,
+                  iconColor: Colors.deepPurple,
+                  targetPage: const LoginView(),
+                  isActive: true,
+                ),
+                _buildMenuCard(
+                  context,
+                  title: 'Bài 13: Form Phản Hồi',
+                  subtitle: 'Validate realtime khi đang gõ (onUserInteraction)',
+                  icon: Icons.feedback_rounded,
+                  iconColor: const Color(0xFFF57C00), // Màu cam
+                  targetPage: const FeedbackView(),
+                  isActive: true,
+                ),
+
+                // const Padding(
+                //   padding: EdgeInsets.only(top: 24.0, bottom: 16.0, left: 8.0),
+                //   child: Text(
+                //     'Các bài sắp tới',
+                //     style: TextStyle(
+                //       fontSize: 16,
+                //       fontWeight: FontWeight.bold,
+                //       color: Colors.grey,
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
